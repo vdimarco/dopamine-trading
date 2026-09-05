@@ -1,4 +1,4 @@
-"""Publish dashboard/ to here.now as the live1 site. Never writes secrets into git."""
+"""Publish dashboard/ to here.now. Never writes secrets into git. CoS owns live publish."""
 
 from __future__ import annotations
 
@@ -100,7 +100,7 @@ def publish(folder: Path, slug: str, api_key: str) -> dict:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Republish dashboard/ to here.now (live1).")
+    parser = argparse.ArgumentParser(description="Republish dashboard/ to here.now (Matrix jack-in).")
     parser.add_argument("--dir", default=str(DASHBOARD))
     parser.add_argument("--slug", default=os.environ.get("HERENOW_SLUG") or DEFAULT_SLUG)
     parser.add_argument("--dry-run", action="store_true")

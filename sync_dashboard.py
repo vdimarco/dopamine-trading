@@ -1,4 +1,4 @@
-"""Copy the latest paper snapshot into dashboard/ for live1."""
+"""Copy the latest paper snapshot into dashboard/ for the Matrix jack-in."""
 
 from __future__ import annotations
 

@@ -1,26 +1,36 @@
 # dopamine-trading
 
-PAPER ONLY equities paper-trade runtime (live1). Simulated fills against Yahoo quotes. No live orders. No crypto desk.
+PAPER ONLY equities paper-trade runtime. Simulated fills against Yahoo quotes. No live orders. No crypto desk.
 
-Live1 dashboard feed:
+Dashboard is the CoS Matrix jack-in (open-bodhi visual system, paper/SPY signals). Repo match only; CoS owns here.now publish.
+
+Live1 host (CoS publish):
 
 https://lucid-tablet-tgx3.here.now/
 
-https://lucid-tablet-tgx3.here.now/dash.js?v=live1
+https://lucid-tablet-tgx3.here.now/dash.js?v=matrix1
+
+Visual source of truth:
+
+https://open-bodhi-a27f.here.now/
+
+Paper/SPY twin:
+
+https://brisk-tassel-djbq.here.now/
 
 ## Layout
 
 ```
-engine.py                 paper broker (cash, positions, fills, snapshot)
+engine.py                 paper broker (cash, positions, fills, Matrix snapshot)
 quotes.py                 Yahoo Finance quotes via urllib
 strategy.py               20-session cross-sectional momentum
 run_session.py            one paper tick
 loop_session.py           repeat ticks; writes session.pid
 sync_dashboard.py         copy snapshot into dashboard/
 republish_dashboard.py    publish dashboard/ to here.now
-build_dash.py             verify live1 dashboard files
-dashboard/index.html      live1 shell (loads dash.js?v=live1)
-dashboard/dash.js         feed + pulse renderer
+build_dash.py             verify Matrix jack-in dashboard files
+dashboard/index.html      Matrix shell (loads dash.js?v=matrix1)
+dashboard/dash.js         paper/SPY curve + single fullscreen handler
 README.md                 this file
 ```
 
@@ -34,6 +44,7 @@ Python 3.10+ stdlib only. From the repo root:
 python3 run_session.py
 python3 sync_dashboard.py
 python3 build_dash.py
+python3 test_matrix_dash.py
 ```
 
 Loop the desk (writes `session.pid`):
@@ -56,9 +67,9 @@ Serve the dashboard locally after a sync:
 python3 -m http.server 8787 --directory dashboard
 ```
 
-Then open `http://127.0.0.1:8787/` . The page polls `data.json` and the live1 host above.
+Then open `http://127.0.0.1:8787/` . The page polls `data.json`. Chart/fullscreen uses `viewport-fit=cover` and safe-area insets. One Fullscreen click handler. No inline onclick.
 
-`republish_dashboard.py` reads `HERENOW_API_KEY` or `~/.herenow/credentials`. It does not write claim tokens or credentials into the repo. Anonymous publishes expire in 24 hours.
+`republish_dashboard.py` reads `HERENOW_API_KEY` or `~/.herenow/credentials`. It does not write claim tokens or credentials into the repo. Anonymous publishes expire in 24 hours. CoS owns live publish.
 
 ## Scope
 
