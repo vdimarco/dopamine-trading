@@ -14,7 +14,6 @@ dashboard/data.json
 claim
 tokens
 _fs_verify_fs.png
-crypto-paper/
 .env
 .env.*
 *.egg-info/
