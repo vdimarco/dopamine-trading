@@ -13,8 +13,8 @@ dashboard/data.json
 .herenow/
 claim
 tokens
+*claim*token*
 _fs_verify_fs.png
-crypto-paper/
 .env
 .env.*
 *.egg-info/

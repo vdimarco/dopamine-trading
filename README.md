@@ -1,6 +1,6 @@
 # dopamine-trading
 
-PAPER ONLY equities paper-trade runtime. Simulated fills against Yahoo quotes. No live orders. No crypto desk.
+PAPER ONLY equities paper-trade runtime. Simulated fills against Yahoo quotes. No live orders. Crypto paper desk is `crypto-paper/` (live matrix2: https://open-bodhi-a27f.here.now/).
 
 Dashboard is the CoS Matrix jack-in (open-bodhi visual system, paper/SPY signals). Repo match only; CoS owns here.now publish.
 
@@ -17,6 +17,8 @@ https://open-bodhi-a27f.here.now/
 Paper/SPY twin:
 
 https://brisk-tassel-djbq.here.now/
+
+Crypto paper desk (30d, $1k → $100k) lives in `crypto-paper/`. Live: https://open-bodhi-a27f.here.now/
 
 ## Layout
 
@@ -73,6 +75,6 @@ Then open `http://127.0.0.1:8787/` . The page polls `data.json`. Chart/fullscree
 
 ## Scope
 
-- Equities paper desk only
+- Equities paper desk only in the repo root
+- CRYPTO PAPER desk is `crypto-paper/` (see that README)
 - PAPER ONLY
-- Do not add `crypto-paper/` or any crypto desk files
