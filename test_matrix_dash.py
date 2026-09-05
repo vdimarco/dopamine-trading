@@ -11,7 +11,7 @@ from engine import STARTING_CASH, TARGET_PCT, PaperBroker
 
 
 class MatrixDashTests(unittest.TestCase):
-    def test_build_dash_matrix1(self) -> None:
+    def test_build_dash_matrix2(self) -> None:
         built = build_dash.build()
         self.assertEqual(built, ["dashboard/index.html", "dashboard/dash.js"])
 
@@ -21,8 +21,10 @@ class MatrixDashTests(unittest.TestCase):
         self.assertIn("safe-area-inset-top", html)
         self.assertNotIn("onclick=", html)
         self.assertNotIn("—", html)
-        self.assertIn("dash.js?v=matrix1", html)
-        self.assertIn("overflow-x:hidden", html)
+        self.assertIn("dash.js?v=matrix2", html)
+        self.assertNotIn("dash.js?v=matrix1", html)
+        self.assertIn("overflow-x:clip", html)
+        self.assertIn("matrix2 responsive hard lock", html)
 
     def test_js_single_fs_handler(self) -> None:
         js = Path("dashboard/dash.js").read_text(encoding="utf-8")
@@ -39,7 +41,7 @@ class MatrixDashTests(unittest.TestCase):
             book.mark(book.last_quotes)
             book.save()
             snap = book.snapshot()
-        self.assertEqual(snap["version"], "matrix1")
+        self.assertEqual(snap["version"], "matrix2")
         self.assertEqual(snap["start"], STARTING_CASH)
         self.assertAlmostEqual(snap["target_equity"], STARTING_CASH * (1 + TARGET_PCT))
         self.assertAlmostEqual(snap["spy_pct"], 1.0)

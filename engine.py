@@ -218,7 +218,7 @@ class PaperBroker:
         return {
             "mode": "PAPER",
             "desk": "equities",
-            "version": "matrix1",
+            "version": "matrix2",
             "created_at": self.created_at,
             "updated_at": self.updated_at,
             "started_at": self.created_at,
@@ -246,7 +246,7 @@ class PaperBroker:
             "fills": fills,
             "feed": list(self.feed),
             "quotes": quotes,
-            "pulse": {"ok": True, "label": "matrix1", "age_s": 0},
+            "pulse": {"ok": True, "label": "matrix2", "age_s": 0},
         }
 
     def save(self) -> Path:

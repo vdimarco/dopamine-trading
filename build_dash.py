@@ -12,7 +12,9 @@ REQUIRED = ("index.html", "dash.js")
 
 HTML_MUST = (
     'viewport-fit=cover',
-    'dash.js?v=matrix1',
+    'dash.js?v=matrix2',
+    'matrix2 responsive hard lock',
+    'overflow-x:clip',
     '--safe-t:env(safe-area-inset-top',
     '--safe-r:env(safe-area-inset-right',
     '--safe-b:env(safe-area-inset-bottom',
@@ -29,6 +31,7 @@ HTML_MUST_NOT = (
     'onclick=',
     '—',
     'dash.js?v=live1',
+    'dash.js?v=matrix1',
     'CRYPTO PAPER',
 )
 JS_MUST = (
@@ -43,6 +46,7 @@ JS_MUST_NOT = (
     'window.toggleChartFullscreen',
     'CRYPTO PAPER',
     '—',
+    'matrix1',
 )
 
 
@@ -84,7 +88,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dir", default=str(DASHBOARD))
     args = parser.parse_args(argv)
     built = build(Path(args.dir))
-    print("matrix1 " + " ".join(built))
+    print("matrix2 " + " ".join(built))
     return 0
 
 

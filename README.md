@@ -8,7 +8,7 @@ Live1 host (CoS publish):
 
 https://lucid-tablet-tgx3.here.now/
 
-https://lucid-tablet-tgx3.here.now/dash.js?v=matrix1
+https://lucid-tablet-tgx3.here.now/dash.js?v=matrix2
 
 Visual source of truth:
 
@@ -29,7 +29,7 @@ loop_session.py           repeat ticks; writes session.pid
 sync_dashboard.py         copy snapshot into dashboard/
 republish_dashboard.py    publish dashboard/ to here.now
 build_dash.py             verify Matrix jack-in dashboard files
-dashboard/index.html      Matrix shell (loads dash.js?v=matrix1)
+dashboard/index.html      Matrix shell (loads dash.js?v=matrix2)
 dashboard/dash.js         paper/SPY curve + single fullscreen handler
 README.md                 this file
 ```
@@ -67,7 +67,7 @@ Serve the dashboard locally after a sync:
 python3 -m http.server 8787 --directory dashboard
 ```
 
-Then open `http://127.0.0.1:8787/` . The page polls `data.json`. Chart/fullscreen uses `viewport-fit=cover` and safe-area insets. One Fullscreen click handler. No inline onclick.
+Then open `http://127.0.0.1:8787/` . The page polls `data.json`. Chart/fullscreen uses `viewport-fit=cover` and safe-area insets. One Fullscreen click handler. No inline onclick. Cache buster is `dash.js?v=matrix2`.
 
 `republish_dashboard.py` reads `HERENOW_API_KEY` or `~/.herenow/credentials`. It does not write claim tokens or credentials into the repo. Anonymous publishes expire in 24 hours. CoS owns live publish.
 
