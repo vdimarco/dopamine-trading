@@ -1,0 +1,14 @@
+.venv/
+logs/
+ledger/
+secrets/
+.herenow/
+session.pid
+data.json
+dashboard/data.json
+claim
+tokens
+*.bak
+*.bak*
+.env
+.env.*

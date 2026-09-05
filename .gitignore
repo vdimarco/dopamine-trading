@@ -13,6 +13,7 @@ dashboard/data.json
 .herenow/
 claim
 tokens
+*claim*token*
 _fs_verify_fs.png
 .env
 .env.*

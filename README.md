@@ -1,6 +1,6 @@
 # dopamine-trading
 
-PAPER ONLY equities paper-trade runtime. Simulated fills against Yahoo quotes. No live orders. No crypto desk.
+PAPER ONLY equities paper-trade runtime. Simulated fills against Yahoo quotes. No live orders. Crypto paper desk is `crypto-paper/` (live matrix2: https://open-bodhi-a27f.here.now/).
 
 Dashboard is the CoS Matrix jack-in (open-bodhi visual system, paper/SPY signals). Repo match only; CoS owns here.now publish.
 
